@@ -35,3 +35,5 @@ jobs:
         # optional, default is -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
         # Install extra packages by apt-get
         # extra_system_packages: # optional
+    - name: Renaming File
+      run: mv main.pdf CV_AdrianLöwenstein_FR.pdf
