@@ -36,14 +36,14 @@ jobs:
         # Install extra packages by apt-get
         # extra_system_packages: # optional
     - name: Renaming File
-      run: mv main.pdf CV_AdrianLöwenstein_FR.pdf
+      run: mv main.pdf CV_AdrianLowenstein_FR.pdf
     - name: Push
       uses: github-actions-x/commit@v2.6
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         push-branch: 'master'
-        commit-message: 'Udpadte PDF'
+        commit-message: 'Update PDF'
         force-add: 'true'
-        files: CV_AdrianLöwenstein_FR.pdf
+        files: CV_AdrianLowenstein_FR.pdf
         name: Adrian Löwenstein
         email: adrian.loewenstein@icloud.com 
