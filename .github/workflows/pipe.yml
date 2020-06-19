@@ -19,10 +19,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Compile LateX
-      uses: vinay0410/tectonic-action@v1.1.2
+    - name: Set up Git repository
+      uses: actions/checkout@v1
+    - name: LaTeX compilation
+      uses: dante-ev/latex-action@v0.2.0
       with:
-        # Path of Tex File
-        tex_path: main.tex
-        # String stating whether to push output PDF, PDF will only be pushed in case of "yes"
-        push: # optional, default is no
+        # The root LaTeX file to be compiled
+        root_file: ./main.tex
+        # The working directory for the latex compiler to be invoked
+        # working_directory: # optional
+        # LaTeX engine to be used
+        #compiler: xelatex # optional, default is latexmk
+        # Extra arguments to be passed to the latex compiler
+        args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+        # optional, default is -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+        # Install extra packages by apt-get
+        # extra_system_packages: # optional
